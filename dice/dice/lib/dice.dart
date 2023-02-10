@@ -54,26 +54,44 @@ class _DiceGameState extends State<DiceGame> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
-        child: Row(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-                child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
-                  onPressed: () {
-                    rollleftdice();
-                  },
-                  child: Image.asset('assets/images/dice$leftdice.png')),
-            )),
-            Expanded(
-                child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: TextButton(
+            Row(
+              children: [
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                      onPressed: () {
+                        rollleftdice();
+                      },
+                      child: Image.asset('assets/images/dice$leftdice.png')),
+                )),
+                Expanded(
+                    child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: TextButton(
+                      onPressed: () {
+                        rollrightdice();
+                      },
+                      child: Image.asset('assets/images/dice$rightdice.png')),
+                )),
+              ],
+            ),
+            ButtonTheme(
+              minWidth: 100,
+              height: 50,
+              child: ElevatedButton(
                   onPressed: () {
                     rollrightdice();
+                    rollleftdice();
                   },
-                  child: Image.asset('assets/images/dice$rightdice.png')),
-            ))
+                  child: const Padding(
+                    padding: EdgeInsets.all(10.0),
+                    child: Icon(Icons.replay_outlined),
+                  )),
+            )
           ],
         ),
       ),

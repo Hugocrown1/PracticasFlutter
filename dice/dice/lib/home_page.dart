@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromRGBO(22, 26, 29, 1),
+      backgroundColor: const Color.fromRGBO(22, 26, 29, 1),
       appBar: AppBar(
         title: const Text('OPEN THE GAME'),
       ),
