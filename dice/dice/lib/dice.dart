@@ -51,28 +51,31 @@ class _DiceGameState extends State<DiceGame> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: [
-          Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-                onPressed: () {
-                  rollleftdice();
-                },
-                child: Image.asset('assets/images/dice$leftdice.png')),
-          )),
-          Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextButton(
-                onPressed: () {
-                  rollrightdice();
-                },
-                child: Image.asset('assets/images/dice$rightdice.png')),
-          ))
-        ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Row(
+          children: [
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                  onPressed: () {
+                    rollleftdice();
+                  },
+                  child: Image.asset('assets/images/dice$leftdice.png')),
+            )),
+            Expanded(
+                child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: TextButton(
+                  onPressed: () {
+                    rollrightdice();
+                  },
+                  child: Image.asset('assets/images/dice$rightdice.png')),
+            ))
+          ],
+        ),
       ),
     );
   }
