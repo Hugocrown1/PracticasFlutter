@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'pantalla_final.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -19,6 +20,23 @@ class QuizPage extends StatefulWidget {
   State<QuizPage> createState() => _QuizPageState();
 }
 
+class Data {
+  int numAciertos;
+  int numFallos;
+  int numPregunta;
+
+  Data(
+      {required this.numAciertos,
+      required this.numFallos,
+      required this.numPregunta});
+}
+
+final data = Data(
+  numAciertos: 0,
+  numFallos: 0,
+  numPregunta: 0,
+);
+
 class _QuizPageState extends State<QuizPage> {
   List<Icon> puntuacion = [
     // Icon(
@@ -37,9 +55,19 @@ class _QuizPageState extends State<QuizPage> {
     '¿Los globulos rojos viven 4 meses?',
     'El cuerpo humano adulto tiene 306 huesos',
     'La cobalamina es una vitamina',
+    'Los 4 reyes de la baraja tienen bigote',
+    'El aguacate es una hortaliza',
+    'Chivas es el mas grande'
   ];
 
-  int numeroPregunta = 0;
+  List<bool> respuestas = [
+    true,
+    false,
+    true,
+    false,
+    false,
+    true,
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +82,7 @@ class _QuizPageState extends State<QuizPage> {
               padding: EdgeInsets.all(8.0),
               child: Center(
                 child: Text(
-                  preguntas[numeroPregunta],
+                  preguntas[data.numPregunta],
                   style: TextStyle(fontSize: 25),
                 ),
               ),
@@ -70,8 +98,7 @@ class _QuizPageState extends State<QuizPage> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    numeroPregunta++;
-                    puntuacion.add(const Icon(Icons.check));
+                    comprobar(true);
                   });
                 },
                 child: const Text("VERDADERO",
@@ -90,8 +117,7 @@ class _QuizPageState extends State<QuizPage> {
               child: TextButton(
                 onPressed: () {
                   setState(() {
-                    numeroPregunta++;
-                    puntuacion.add(const Icon(Icons.close));
+                    comprobar(false);
                   });
                 },
                 child: const Text("FALSO",
@@ -106,5 +132,26 @@ class _QuizPageState extends State<QuizPage> {
         ],
       ),
     );
+  }
+
+  void comprobar(booleano) {
+    bool respuestaCorrecta = respuestas[data.numPregunta];
+
+    if (respuestaCorrecta == booleano) {
+      print("La respuesta fue correcta");
+      puntuacion.add(const Icon(Icons.check));
+      data.numAciertos++;
+    } else {
+      print("La respuesta fue incorrecta");
+      puntuacion.add(const Icon(Icons.close));
+      data.numFallos++;
+    }
+    if (data.numPregunta < preguntas.length - 1) {
+      data.numPregunta++;
+    } else {
+      print("El juego termino");
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => PantallaFinal(data: data)));
+    }
   }
 }
