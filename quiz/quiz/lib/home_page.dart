@@ -79,11 +79,11 @@ class _QuizPageState extends State<QuizPage> {
           Expanded(
             flex: 5,
             child: Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               child: Center(
                 child: Text(
                   preguntas[data.numPregunta],
-                  style: TextStyle(fontSize: 25),
+                  style: const TextStyle(fontSize: 25),
                 ),
               ),
             ),
@@ -93,7 +93,7 @@ class _QuizPageState extends State<QuizPage> {
             child: Container(
               height: 60,
               decoration: BoxDecoration(
-                  color: Color(0xff052F5F),
+                  color: const Color(0xff052F5F),
                   borderRadius: BorderRadius.circular(15)),
               child: TextButton(
                 onPressed: () {
@@ -112,7 +112,7 @@ class _QuizPageState extends State<QuizPage> {
             child: Container(
               height: 60,
               decoration: BoxDecoration(
-                  color: Color(0xff005377),
+                  color: const Color(0xff005377),
                   borderRadius: BorderRadius.circular(15)),
               child: TextButton(
                 onPressed: () {
