@@ -138,18 +138,15 @@ class _QuizPageState extends State<QuizPage> {
     bool respuestaCorrecta = respuestas[data.numPregunta];
 
     if (respuestaCorrecta == booleano) {
-      print("La respuesta fue correcta");
       puntuacion.add(const Icon(Icons.check));
       data.numAciertos++;
     } else {
-      print("La respuesta fue incorrecta");
       puntuacion.add(const Icon(Icons.close));
       data.numFallos++;
     }
     if (data.numPregunta < preguntas.length - 1) {
       data.numPregunta++;
     } else {
-      print("El juego termino");
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => PantallaFinal(data: data)));
     }
