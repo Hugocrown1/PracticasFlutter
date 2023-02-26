@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:navegacion/home_page.dart';
 
-class DondaScreen extends StatelessWidget {
-  const DondaScreen({super.key});
+import '../home_page.dart';
+
+class MbtdfScreen extends StatelessWidget {
+  const MbtdfScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class DondaScreen extends StatelessWidget {
                   child: Icon(
                     Icons.arrow_back,
                     size: 35,
-                    color: Color(0xff000000),
+                    color: Color(0xfff2274c),
                   ),
                 ),
               ),
@@ -43,6 +44,8 @@ class DondaScreen extends StatelessWidget {
                   height: 180,
                   width: 180,
                   decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/mtdf.jpg')),
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(15)),
                   child: Text(''),
@@ -58,7 +61,7 @@ class DondaScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Donda',
+                  'My Beautiful Dark Twisted Fantasy',
                   style: TextStyle(
                       fontSize: 25,
                       fontFamily: 'FranklinMedium',
@@ -66,7 +69,7 @@ class DondaScreen extends StatelessWidget {
                 ),
                 Text(
                   style: TextStyle(fontSize: 15, color: Color(0xffADB5BD)),
-                  'Kanye West · 2021 · 10 canciones',
+                  'Kanye West · 2013 · 10 canciones',
                 )
               ],
             ),
@@ -76,7 +79,7 @@ class DondaScreen extends StatelessWidget {
             child: Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: Color(0xff000000),
+                  backgroundColor: Color(0xfff2274c),
                   radius: 30,
                   child: Icon(
                     Icons.play_arrow,
@@ -97,19 +100,19 @@ class DondaScreen extends StatelessWidget {
           ),
           SizedBox(
             width: 450,
-            height: 320,
+            height: 290,
             child: ListView(
               children: [
-                cancionLista('Donda Chant'),
-                cancionLista('Off The Grid'),
-                cancionLista('Hurricane'),
-                cancionLista('Praise God'),
-                cancionLista('No Child Left Behind'),
-                cancionLista('Come To Life'),
-                cancionLista('Lord I Need You'),
-                cancionLista('Jesus God'),
-                cancionLista('New Again'),
-                cancionLista('Tell the Vision'),
+                cancionLista('Dark Fantasy', 'Kanye West'),
+                cancionLista('Gorgeous', 'Kanye West, Kid Cudi, Raekwon'),
+                cancionLista('POWER', 'Kanye West'),
+                cancionLista('All Of The Lights', 'Kanye West'),
+                cancionLista('Monster', 'Kanye West, JAY-Z, Rick Ross,...'),
+                cancionLista('So Appalled', 'Kanye West, JAY-Z, Pusha T,...'),
+                cancionLista('Devil In A New Dress', 'Rick Ross'),
+                cancionLista('Runaway', 'Kanye West, Pusha T'),
+                cancionLista('Hell Of A Life', 'Kanye West'),
+                cancionLista('Blame Game', 'Kanye West, John Legend'),
               ],
             ),
           )
@@ -118,7 +121,7 @@ class DondaScreen extends StatelessWidget {
     );
   }
 
-  ListTile cancionLista(nombreCancion) {
+  ListTile cancionLista(nombreCancion, feat) {
     return ListTile(
       title: Text(
         nombreCancion,
@@ -129,7 +132,7 @@ class DondaScreen extends StatelessWidget {
             fontWeight: FontWeight.bold),
       ),
       subtitle: Text(
-        'Kanye West',
+        feat,
         style: TextStyle(color: Color(0xffADB5BD)),
       ),
       trailing: Icon(

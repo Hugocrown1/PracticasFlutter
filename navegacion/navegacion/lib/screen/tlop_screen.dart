@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:navegacion/home_page.dart';
 
-class DondaScreen extends StatelessWidget {
-  const DondaScreen({super.key});
+import '../home_page.dart';
+
+class TlopScreen extends StatelessWidget {
+  const TlopScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class DondaScreen extends StatelessWidget {
                   child: Icon(
                     Icons.arrow_back,
                     size: 35,
-                    color: Color(0xff000000),
+                    color: Color(0xffF58B57),
                   ),
                 ),
               ),
@@ -43,6 +44,8 @@ class DondaScreen extends StatelessWidget {
                   height: 180,
                   width: 180,
                   decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/images/tlop.jpg')),
                       color: Colors.black,
                       borderRadius: BorderRadius.circular(15)),
                   child: Text(''),
@@ -58,7 +61,7 @@ class DondaScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Donda',
+                  'The Life Of Pablo',
                   style: TextStyle(
                       fontSize: 25,
                       fontFamily: 'FranklinMedium',
@@ -66,7 +69,7 @@ class DondaScreen extends StatelessWidget {
                 ),
                 Text(
                   style: TextStyle(fontSize: 15, color: Color(0xffADB5BD)),
-                  'Kanye West · 2021 · 10 canciones',
+                  'Kanye West · 2016 · 10 canciones',
                 )
               ],
             ),
@@ -76,7 +79,7 @@ class DondaScreen extends StatelessWidget {
             child: Row(
               children: [
                 CircleAvatar(
-                  backgroundColor: Color(0xff000000),
+                  backgroundColor: Color(0xffF58B57),
                   radius: 30,
                   child: Icon(
                     Icons.play_arrow,
@@ -100,16 +103,16 @@ class DondaScreen extends StatelessWidget {
             height: 320,
             child: ListView(
               children: [
-                cancionLista('Donda Chant'),
-                cancionLista('Off The Grid'),
-                cancionLista('Hurricane'),
-                cancionLista('Praise God'),
-                cancionLista('No Child Left Behind'),
-                cancionLista('Come To Life'),
-                cancionLista('Lord I Need You'),
-                cancionLista('Jesus God'),
-                cancionLista('New Again'),
-                cancionLista('Tell the Vision'),
+                cancionLista('Ultralight Beam'),
+                cancionLista('Father Stretch My Hands Pt. 1'),
+                cancionLista('Saint Pablo'),
+                cancionLista('Famous'),
+                cancionLista('Wolves'),
+                cancionLista('Facts (Charlie Heat Version)'),
+                cancionLista('Highlights'),
+                cancionLista('Freestyle 4'),
+                cancionLista('I Love Kanye'),
+                cancionLista('No More Parties In LA'),
               ],
             ),
           )
