@@ -49,7 +49,7 @@ class HomePage extends StatelessWidget {
                       Navigator.push(context, ruta);
                     },
                     child: botonAlbum(
-                        'assets/images/tlop.jpg', 'The Life Of Hugo', '2016'),
+                        'assets/images/tlop.jpg', 'The Life Of Pablo', '2016'),
                   ),
                 ),
               ],
@@ -108,7 +108,10 @@ class HomePage extends StatelessWidget {
           ),
           Text(
             nombre,
-            style: TextStyle(color: Color(0xffE9ECEF)),
+            style: TextStyle(
+                color: Color(0xffE9ECEF),
+                fontSize: 16,
+                fontFamily: 'FranklinMedium'),
             textAlign: TextAlign.justify,
           ),
           Text(
