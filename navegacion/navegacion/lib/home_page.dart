@@ -67,7 +67,7 @@ class HomePage extends StatelessWidget {
                         Navigator.push(context, ruta);
                       },
                       child: botonAlbum(
-                          'assets/images/mtdf.jpg', 'MBTDF', '2010')),
+                          'assets/images/mtdf.jpg', 'MBDTF', '2010')),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
